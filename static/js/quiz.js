@@ -73,6 +73,16 @@ function displayQuestion() {
     const questionImage = document.getElementById('questionImage');
     if (questionImage && currentQuestion.image) {
         questionImage.innerHTML = currentQuestion.image;
+        questionImage.style.display = 'block';
+        
+        // 画像読み込みエラーハンドリング
+        const img = questionImage.querySelector('img');
+        if (img) {
+            img.onerror = function() {
+                questionImage.style.display = 'none';
+                console.log('画像が読み込めませんでした:', img.src);
+            };
+        }
     } else if (questionImage) {
         questionImage.style.display = 'none';
     }
