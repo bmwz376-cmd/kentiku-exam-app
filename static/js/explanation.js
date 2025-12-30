@@ -117,15 +117,6 @@ function displayQuestionInfo() {
     if (questionImage && currentQuestion.image) {
         questionImage.innerHTML = currentQuestion.image;
         questionImage.style.display = 'block';
-        
-        // 画像読み込みエラーハンドリング
-        const img = questionImage.querySelector('img');
-        if (img) {
-            img.onerror = function() {
-                questionImage.style.display = 'none';
-                console.log('画像が読み込めませんでした:', img.src);
-            };
-        }
     } else if (questionImage) {
         questionImage.style.display = 'none';
     }
@@ -217,7 +208,6 @@ function displayReferenceImages() {
 
     referenceImages.innerHTML = '';
 
-    let hasValidImages = false;
     currentQuestion.referenceImages.forEach(image => {
         const imageItem = document.createElement('div');
         imageItem.className = 'reference-image-item';
@@ -226,25 +216,6 @@ function displayReferenceImages() {
             <p class="reference-image-caption">${image.caption}</p>
         `;
         referenceImages.appendChild(imageItem);
-        
-        // 画像読み込みエラーハンドリング
-        const img = imageItem.querySelector('img');
-        if (img) {
-            img.onload = function() {
-                hasValidImages = true;
-            };
-            img.onerror = function() {
-                imageItem.style.display = 'none';
-                console.log('参考画像が読み込めませんでした:', img.src);
-                
-                // すべての画像が読み込めない場合はセクションを非表示
-                setTimeout(() => {
-                    if (!hasValidImages) {
-                        referenceSection.style.display = 'none';
-                    }
-                }, 100);
-            };
-        }
     });
 }
 

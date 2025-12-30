@@ -39,12 +39,6 @@ def explanation():
     return render_template('explanation.html')
 
 
-@app.route('/stats')
-def stats():
-    """学習統計ページ"""
-    return render_template('stats.html')
-
-
 @app.route('/api/questions', methods=['GET'])
 def get_questions():
     """問題データを取得するAPI"""
