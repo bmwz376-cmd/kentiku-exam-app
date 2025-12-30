@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題解答 - 2級建築施工管理技士</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/questions" class="back-button">
+                <i class="fas fa-arrow-left"></i> <ruby>問題<rt>もんだい</rt>一覧<rt>いちらん</rt>へ戻<rt>もど</rt>る</ruby>
+            </a>
+            <img src="https://www.genspark.ai/api/files/s/QD8GXHM4" alt="ロゴ" class="header-logo">
+            <h1><ruby>問題<rt>もんだい</rt>解答<rt>かいとう</rt></ruby></h1>
+        </header>
+
+        <main class="main-content">
+            <div class="quiz-container">
+                <div class="question-header">
+                    <div class="question-meta">
+                        <span class="question-number" id="questionNumber">No. 1</span>
+                        <span class="question-year" id="questionYear">令和7年度</span>
+                        <span class="question-category" id="questionCategory">建築学</span>
+                    </div>
+                </div>
+
+                <div class="question-content">
+                    <h2 class="question-title" id="questionTitle">
+                        <!-- 問題タイトルが表示されます -->
+                    </h2>
+
+                    <div class="question-text" id="questionText">
+                        <!-- 問題文が表示されます -->
+                    </div>
+
+                    <div class="question-image" id="questionImage">
+                        <!-- 問題図が表示されます（ある場合） -->
+                    </div>
+                </div>
+
+                <div class="choices-container" id="choicesContainer">
+                    <!-- 選択肢が表示されます -->
+                </div>
+
+                <div class="quiz-actions">
+                    <button id="submitAnswer" class="btn btn-primary" disabled>
+                        <i class="fas fa-check"></i>
+                        <ruby>解答<rt>かいとう</rt>を確認<rt>かくにん</rt></ruby>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 2級建築施工管理技士 過去問題集 | Produced by NL-DG Co., Ltd. & Narukawa Co., Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+</body>
+</html>

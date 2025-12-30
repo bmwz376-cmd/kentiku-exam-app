@@ -1,0 +1,45 @@
+/* お知らせバナーのアニメーション */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification-banner {
+    animation: slideDown 0.5s ease-out;
+}
+
+.notification-banner a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.notification-banner button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transition: all 0.2s ease;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    .notification-banner {
+        padding: 15px !important;
+    }
+    
+    .notification-banner h3 {
+        font-size: 16px !important;
+    }
+    
+    .notification-banner p {
+        font-size: 13px !important;
+    }
+    
+    .notification-banner .fas.fa-rocket {
+        font-size: 24px !important;
+    }
+}
