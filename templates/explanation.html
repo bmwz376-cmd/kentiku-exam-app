@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解答・解説 - 2級建築施工管理技士</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/questions" class="back-button">
+                <i class="fas fa-arrow-left"></i> <ruby>問題<rt>もんだい</rt>一覧<rt>いちらん</rt>へ戻<rt>もど</rt>る</ruby>
+            </a>
+            <img src="https://www.genspark.ai/api/files/s/QD8GXHM4" alt="ロゴ" class="header-logo">
+            <h1><ruby>解答<rt>かいとう</rt>・解説<rt>かいせつ</rt></ruby></h1>
+        </header>
+
+        <main class="main-content">
+            <div class="explanation-container">
+                <!-- 結果表示 -->
+                <div class="result-banner" id="resultBanner">
+                    <i class="result-icon" id="resultIcon"></i>
+                    <h2 class="result-text" id="resultText"></h2>
+                </div>
+
+                <!-- 問題情報 -->
+                <div class="question-info">
+                    <div class="question-meta">
+                        <span class="question-number" id="questionNumber">No. 1</span>
+                        <span class="question-year" id="questionYear">令和7年度</span>
+                        <span class="question-category" id="questionCategory">建築学</span>
+                    </div>
+                    <h2 class="question-title" id="questionTitle"></h2>
+                    <div class="question-text" id="questionText"></div>
+                    <div class="question-image" id="questionImage"></div>
+                </div>
+
+                <!-- 解答結果 -->
+                <div class="answer-section">
+                    <div class="answer-row">
+                        <div class="answer-item">
+                            <h3><ruby>あなたの解答<rt>かいとう</rt></ruby></h3>
+                            <p class="answer-value" id="userAnswer">-</p>
+                        </div>
+                        <div class="answer-item">
+                            <h3><ruby>正<rt>せい</rt>解<rt>かい</rt></ruby></h3>
+                            <p class="answer-value correct" id="correctAnswer">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 詳細解説 -->
+                <div class="explanation-section">
+                    <h3><ruby>詳細<rt>しょうさい</rt>解説<rt>かいせつ</rt></ruby></h3>
+                    <div class="explanation-content" id="explanationContent"></div>
+                </div>
+
+                <!-- 各選択肢の解説 -->
+                <div class="choices-explanation">
+                    <h3><ruby>各<rt>かく</rt>選択<rt>せんたく</rt>肢<rt>し</rt>の解説<rt>かいせつ</rt></ruby></h3>
+                    <div id="choicesExplanation"></div>
+                </div>
+
+                <!-- 参考図表 -->
+                <div class="reference-section" id="referenceSection">
+                    <h3><ruby>参考<rt>さんこう</rt>図表<rt>ずひょう</rt></ruby></h3>
+                    <div id="referenceImages"></div>
+                </div>
+
+                <!-- 関連法令・基準 -->
+                <div class="law-section" id="lawSection">
+                    <h3><i class="fas fa-book"></i> <ruby>関連<rt>かんれん</rt>法令<rt>ほうれい</rt>・基準<rt>きじゅん</rt></ruby></h3>
+                    <div id="lawContent"></div>
+                </div>
+
+                <!-- ワンポイントアドバイス（英語） -->
+                <div class="tip-section" id="tipSection">
+                    <h3><i class="fas fa-lightbulb"></i> Key Point</h3>
+                    <div class="tip-content" id="tipContent"></div>
+                </div>
+
+                <!-- アクションボタン -->
+                <div class="explanation-actions">
+                    <button id="nextQuestion" class="btn btn-primary">
+                        <i class="fas fa-forward"></i>
+                        <ruby>次<rt>つぎ</rt>の問題<rt>もんだい</rt>へ</ruby>
+                    </button>
+                    <button id="reviewAgain" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i>
+                        <ruby>もう一度<rt>いちど</rt>解<rt>と</rt>く</ruby>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 2級建築施工管理技士 過去問題集 | Produced by NL-DG Co., Ltd. & Narukawa Co., Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/explanation.js') }}"></script>
+</body>
+</html>
