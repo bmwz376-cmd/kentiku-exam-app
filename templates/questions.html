@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題一覧 - 2級建築施工管理技士</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="/" class="back-button">
+                <i class="fas fa-arrow-left"></i> 戻る
+            </a>
+            <img src="https://www.genspark.ai/api/files/s/QD8GXHM4" alt="ロゴ" class="header-logo">
+            <h1>問題一覧</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label>年度で絞り込む:</label>
+                    <select id="yearFilter" class="filter-select">
+                        <option value="all">全て</option>
+                        <option value="r07">令和7年度</option>
+                        <option value="r06">令和6年度</option>
+                        <option value="r05">令和5年度</option>
+                        <option value="r04">令和4年度</option>
+                        <option value="r03">令和3年度</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>分野で絞り込む:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">全て</option>
+                        <option value="architecture">建築</option>
+                        <option value="structure">構造</option>
+                        <option value="construction">施工</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>学習状況:</label>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="all">全て</option>
+                        <option value="unanswered">未解答</option>
+                        <option value="correct">正解済み</option>
+                        <option value="incorrect">不正解</option>
+                    </select>
+                </div>
+
+                <div class="search-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="キーワードで検索...">
+                </div>
+            </div>
+
+            <div class="questions-stats">
+                <p>表示中: <span id="displayCount">0</span> / <span id="totalCount">250</span> 問</p>
+            </div>
+
+            <div id="questionsList" class="questions-list">
+                <!-- 問題リストがJavaScriptで動的に生成されます -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 2級建築施工管理技士 過去問題集 | Produced by NL-DG Co., Ltd. & Narukawa Co., Ltd.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
+</body>
+</html>
